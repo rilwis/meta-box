@@ -9,35 +9,35 @@ add_filter(
 		global $test;
 		$prefix = '';
 		$test   = array(
-			'title'  => __( 'Test helper functions', 'your-prefix' ),
+			'title'  =>esc_html__( 'Test helper functions', 'your-prefix' ),
 			'fields' => array(
 				array(
 					'id'   => 'checkbox',
-					'name' => __( 'Checkbox', 'your-prefix' ),
+					'name' =>esc_html__( 'Checkbox', 'your-prefix' ),
 					'type' => 'checkbox',
 				),
 				array(
 					'id'   => 'color',
-					'name' => __( 'Color', 'your-prefix' ),
+					'name' =>esc_html__( 'Color', 'your-prefix' ),
 					'type' => 'color',
 				),
 				array(
 					'id'    => 'color2',
-					'name'  => __( 'Color clone', 'your-prefix' ),
+					'name'  =>esc_html__( 'Color clone', 'your-prefix' ),
 					'type'  => 'color',
 					'clone' => true,
 				),
 
 				// Object choice
 				array(
-					'name'       => __( 'Post', 'your-prefix' ),
+					'name'       =>esc_html__( 'Post', 'your-prefix' ),
 					'id'         => 'post',
 					'type'       => 'post',
 					'post_type'  => 'post',
 					'field_type' => 'select_advanced',
 				),
 				array(
-					'name'       => __( 'Post Multiple', 'your-prefix' ),
+					'name'       =>esc_html__( 'Post Multiple', 'your-prefix' ),
 					'id'         => 'post2',
 					'type'       => 'post',
 					'multiple'   => true,
@@ -45,7 +45,7 @@ add_filter(
 					'field_type' => 'select_advanced',
 				),
 				array(
-					'name'       => __( 'Post Clone', 'your-prefix' ),
+					'name'       =>esc_html__( 'Post Clone', 'your-prefix' ),
 					'id'         => 'post3',
 					'type'       => 'post',
 					'clone'      => true,
@@ -53,7 +53,7 @@ add_filter(
 					'field_type' => 'select_advanced',
 				),
 				array(
-					'name'       => __( 'Post Clone and Multiple', 'your-prefix' ),
+					'name'       =>esc_html__( 'Post Clone and Multiple', 'your-prefix' ),
 					'id'         => 'post4',
 					'type'       => 'post',
 					'clone'      => true,
@@ -85,34 +85,34 @@ add_filter(
 
 				// Radio
 				array(
-					'name'    => __( 'Radio', 'your-prefix' ),
+					'name'    =>esc_html__( 'Radio', 'your-prefix' ),
 					'id'      => 'radio',
 					'type'    => 'radio',
 					'options' => array(
-						'value1' => __( 'Label1', 'your-prefix' ),
-						'value2' => __( 'Label2', 'your-prefix' ),
+						'value1' =>esc_html__( 'Label1', 'your-prefix' ),
+						'value2' =>esc_html__( 'Label2', 'your-prefix' ),
 					),
 				),
 				array(
-					'name'    => __( 'Radio clone', 'your-prefix' ),
+					'name'    =>esc_html__( 'Radio clone', 'your-prefix' ),
 					'id'      => 'radio2',
 					'type'    => 'radio',
 					'clone'   => true,
 					'options' => array(
-						'value1' => __( 'Label1', 'your-prefix' ),
-						'value2' => __( 'Label2', 'your-prefix' ),
+						'value1' =>esc_html__( 'Label1', 'your-prefix' ),
+						'value2' =>esc_html__( 'Label2', 'your-prefix' ),
 					),
 				),
 
 				// oembed
 				array(
 					'id'   => 'oembed',
-					'name' => __( 'oEmbed', 'your-prefix' ),
+					'name' =>esc_html__( 'oEmbed', 'your-prefix' ),
 					'type' => 'oembed',
 				),
 				array(
 					'id'    => 'oembed2',
-					'name'  => __( 'oEmbed clone', 'your-prefix' ),
+					'name'  =>esc_html__( 'oEmbed clone', 'your-prefix' ),
 					'type'  => 'oembed',
 					'clone' => true,
 				),
@@ -120,7 +120,7 @@ add_filter(
 				// Image select
 				array(
 					'id'      => 'image_select',
-					'name'    => __( 'Image Select', 'your-prefix' ),
+					'name'    =>esc_html__( 'Image Select', 'your-prefix' ),
 					'type'    => 'image_select',
 					'options' => array(
 						'left'  => 'http://placehold.it/90x90&text=Left',
@@ -130,7 +130,7 @@ add_filter(
 				),
 				array(
 					'id'       => 'image_select2',
-					'name'     => __( 'Image Select Multiple', 'your-prefix' ),
+					'name'     =>esc_html__( 'Image Select Multiple', 'your-prefix' ),
 					'type'     => 'image_select',
 					'options'  => array(
 						'left'  => 'http://placehold.it/90x90&text=Left',
@@ -141,7 +141,7 @@ add_filter(
 				),
 				array(
 					'id'      => 'image_select3',
-					'name'    => __( 'Image Select Clone', 'your-prefix' ),
+					'name'    =>esc_html__( 'Image Select Clone', 'your-prefix' ),
 					'type'    => 'image_select',
 					'options' => array(
 						'left'  => 'http://placehold.it/90x90&text=Left',
@@ -165,32 +165,32 @@ add_filter(
 				// Key-value
 				array(
 					'id'   => 'key_value',
-					'name' => __( 'Key Value', 'your-prefix' ),
+					'name' =>esc_html__( 'Key Value', 'your-prefix' ),
 					'type' => 'key_value',
-					'desc' => __( 'Add more additional info below:', 'your-prefix' ),
+					'desc' =>esc_html__( 'Add more additional info below:', 'your-prefix' ),
 				),
 
 				// Fieldset text
 				array(
 					'id'      => 'fieldset_text',
-					'name'    => __( 'Fieldset Text', 'your-prefix' ),
+					'name'    =>esc_html__( 'Fieldset Text', 'your-prefix' ),
 					'type'    => 'fieldset_text',
-					'desc'    => __( 'Please enter following details:', 'your-prefix' ),
+					'desc'    =>esc_html__( 'Please enter following details:', 'your-prefix' ),
 					'options' => array(
-						'name'    => __( 'Name', 'your-prefix' ),
-						'address' => __( 'Address', 'your-prefix' ),
-						'email'   => __( 'Email', 'your-prefix' ),
+						'name'    =>esc_html__( 'Name', 'your-prefix' ),
+						'address' =>esc_html__( 'Address', 'your-prefix' ),
+						'email'   =>esc_html__( 'Email', 'your-prefix' ),
 					),
 				),
 				array(
 					'id'      => 'fieldset_text2',
-					'name'    => __( 'Fieldset Text Clone', 'your-prefix' ),
+					'name'    =>esc_html__( 'Fieldset Text Clone', 'your-prefix' ),
 					'type'    => 'fieldset_text',
-					'desc'    => __( 'Please enter following details:', 'your-prefix' ),
+					'desc'    =>esc_html__( 'Please enter following details:', 'your-prefix' ),
 					'options' => array(
-						'name'    => __( 'Name', 'your-prefix' ),
-						'address' => __( 'Address', 'your-prefix' ),
-						'email'   => __( 'Email', 'your-prefix' ),
+						'name'    =>esc_html__( 'Name', 'your-prefix' ),
+						'address' =>esc_html__( 'Address', 'your-prefix' ),
+						'email'   =>esc_html__( 'Email', 'your-prefix' ),
 					),
 					'clone'   => true,
 				),
@@ -198,20 +198,20 @@ add_filter(
 				// Text list
 				array(
 					'id'      => 'text_list',
-					'name'    => __( 'Text List', 'your-prefix' ),
+					'name'    =>esc_html__( 'Text List', 'your-prefix' ),
 					'type'    => 'text_list',
 					'options' => array(
-						'John Smith'      => __( 'Name', 'your-prefix' ),
-						'name@domain.com' => __( 'Email', 'your-prefix' ),
+						'John Smith'      =>esc_html__( 'Name', 'your-prefix' ),
+						'name@domain.com' =>esc_html__( 'Email', 'your-prefix' ),
 					),
 				),
 				array(
 					'id'      => 'text_list2',
-					'name'    => __( 'Text List Clone', 'your-prefix' ),
+					'name'    =>esc_html__( 'Text List Clone', 'your-prefix' ),
 					'type'    => 'text_list',
 					'options' => array(
-						'John Smith'      => __( 'Name', 'your-prefix' ),
-						'name@domain.com' => __( 'Email', 'your-prefix' ),
+						'John Smith'      =>esc_html__( 'Name', 'your-prefix' ),
+						'name@domain.com' =>esc_html__( 'Email', 'your-prefix' ),
 					),
 					'clone'   => true,
 				),
@@ -219,17 +219,17 @@ add_filter(
 				// File
 				array(
 					'id'   => 'file',
-					'name' => __( 'File', 'your-prefix' ),
+					'name' =>esc_html__( 'File', 'your-prefix' ),
 					'type' => 'file',
 				),
 				array(
 					'id'   => 'fileadv',
-					'name' => __( 'File Advanced', 'your-prefix' ),
+					'name' =>esc_html__( 'File Advanced', 'your-prefix' ),
 					'type' => 'file_advanced',
 				),
 				array(
 					'id'    => 'fileadv2',
-					'name'  => __( 'File Advanced Clone', 'your-prefix' ),
+					'name'  =>esc_html__( 'File Advanced Clone', 'your-prefix' ),
 					'type'  => 'file_advanced',
 					'clone' => true,
 				),
@@ -237,17 +237,17 @@ add_filter(
 				// Image
 				array(
 					'id'   => 'image',
-					'name' => __( 'Image', 'your-prefix' ),
+					'name' =>esc_html__( 'Image', 'your-prefix' ),
 					'type' => 'image',
 				),
 				array(
 					'id'   => 'image_advanced',
-					'name' => __( 'Image Advanced', 'your-prefix' ),
+					'name' =>esc_html__( 'Image Advanced', 'your-prefix' ),
 					'type' => 'image_advanced',
 				),
 				array(
 					'id'    => 'image_advanced2',
-					'name'  => __( 'Image Advanced Clone', 'your-prefix' ),
+					'name'  =>esc_html__( 'Image Advanced Clone', 'your-prefix' ),
 					'type'  => 'image_advanced',
 					'clone' => true,
 				),

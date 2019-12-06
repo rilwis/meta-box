@@ -50,6 +50,6 @@ class RWMB_Checkbox_Field extends RWMB_Input_Field {
 	 * @return string
 	 */
 	public static function format_single_value( $field, $value, $args, $post_id ) {
-		return $value ? __( 'Yes', 'meta-box' ) : __( 'No', 'meta-box' );
+		return $value ?esc_html__( 'Yes', 'meta-box' ) :esc_html__( 'No', 'meta-box' );
 	}
 }

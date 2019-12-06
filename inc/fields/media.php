@@ -24,18 +24,18 @@ class RWMB_Media_Field extends RWMB_File_Field {
 			'rwmb-media',
 			'i18nRwmbMedia',
 			array(
-				'add'                => apply_filters( 'rwmb_media_add_string', _x( '+ Add Media', 'media', 'meta-box' ) ),
-				'single'             => apply_filters( 'rwmb_media_single_files_string', _x( ' file', 'media', 'meta-box' ) ),
-				'multiple'           => apply_filters( 'rwmb_media_multiple_files_string', _x( ' files', 'media', 'meta-box' ) ),
-				'remove'             => apply_filters( 'rwmb_media_remove_string', _x( 'Remove', 'media', 'meta-box' ) ),
-				'edit'               => apply_filters( 'rwmb_media_edit_string', _x( 'Edit', 'media', 'meta-box' ) ),
-				'view'               => apply_filters( 'rwmb_media_view_string', _x( 'View', 'media', 'meta-box' ) ),
-				'noTitle'            => _x( 'No Title', 'media', 'meta-box' ),
+				'add'                => apply_filters( 'rwmb_media_add_string',esc_html_x( '+ Add Media', 'media', 'meta-box' ) ),
+				'single'             => apply_filters( 'rwmb_media_single_files_string',esc_html_x( ' file', 'media', 'meta-box' ) ),
+				'multiple'           => apply_filters( 'rwmb_media_multiple_files_string',esc_html_x( ' files', 'media', 'meta-box' ) ),
+				'remove'             => apply_filters( 'rwmb_media_remove_string',esc_html_x( 'Remove', 'media', 'meta-box' ) ),
+				'edit'               => apply_filters( 'rwmb_media_edit_string',esc_html_x( 'Edit', 'media', 'meta-box' ) ),
+				'view'               => apply_filters( 'rwmb_media_view_string',esc_html_x( 'View', 'media', 'meta-box' ) ),
+				'noTitle'            =>esc_html_x( 'No Title', 'media', 'meta-box' ),
 				'loadingUrl'         => admin_url( 'images/spinner.gif' ),
 				'extensions'         => self::get_mime_extensions(),
-				'select'             => apply_filters( 'rwmb_media_select_string', _x( 'Select Files', 'media', 'meta-box' ) ),
-				'or'                 => apply_filters( 'rwmb_media_or_string', _x( 'or', 'media', 'meta-box' ) ),
-				'uploadInstructions' => apply_filters( 'rwmb_media_upload_instructions_string', _x( 'Drop files here to upload', 'media', 'meta-box' ) ),
+				'select'             => apply_filters( 'rwmb_media_select_string',esc_html_x( 'Select Files', 'media', 'meta-box' ) ),
+				'or'                 => apply_filters( 'rwmb_media_or_string',esc_html_x( 'or', 'media', 'meta-box' ) ),
+				'uploadInstructions' => apply_filters( 'rwmb_media_upload_instructions_string',esc_html_x( 'Drop files here to upload', 'media', 'meta-box' ) ),
 			)
 		);
 	}
@@ -164,7 +164,7 @@ class RWMB_Media_Field extends RWMB_File_Field {
 			}
 		}
 		$attachments                    = array_values( $attachments );
-		$attributes['data-attachments'] = json_encode( $attachments );
+		$attributes['data-attachments'] = wp_json_encode( $attachments );
 
 		return $attributes;
 	}

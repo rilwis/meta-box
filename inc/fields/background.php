@@ -61,7 +61,7 @@ class RWMB_Background_Field extends RWMB_Field {
 				'type'        => 'file_input',
 				'id'          => "{$field['id']}_image",
 				'field_name'  => "{$field['field_name']}[image]",
-				'placeholder' => __( 'Background Image', 'meta-box' ),
+				'placeholder' =>esc_html__( 'Background Image', 'meta-box' ),
 			)
 		);
 		$output .= RWMB_File_Input_Field::html( $meta['image'], $image );

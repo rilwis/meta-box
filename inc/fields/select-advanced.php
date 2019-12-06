@@ -44,7 +44,7 @@ class RWMB_Select_Advanced_Field extends RWMB_Select_Field {
 			$field,
 			array(
 				'js_options'  => array(),
-				'placeholder' => __( 'Select an item', 'meta-box' ),
+				'placeholder' =>esc_html__( 'Select an item', 'meta-box' ),
 			)
 		);
 

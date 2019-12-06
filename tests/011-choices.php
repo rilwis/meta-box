@@ -3,11 +3,11 @@ add_filter( 'rwmb_meta_boxes', 'your_prefix_choice_demo' );
 function your_prefix_choice_demo( $meta_boxes ) {
 	$prefix       = '';
 	$meta_boxes[] = array(
-		'title'  => __( 'Hierarchical Options', 'your-prefix' ),
+		'title'  =>esc_html__( 'Hierarchical Options', 'your-prefix' ),
 		'fields' => array(
 			array(
 				'id'      => $prefix . 'checkbox_list',
-				'name'    => __( 'Flat Checkbox', 'your-prefix' ),
+				'name'    =>esc_html__( 'Flat Checkbox', 'your-prefix' ),
 				'type'    => 'checkbox_list',
 				// Old options syntax
 				'options' => array(
@@ -19,7 +19,7 @@ function your_prefix_choice_demo( $meta_boxes ) {
 
 			array(
 				'id'       => $prefix . 'checkbox_tree',
-				'name'     => __( 'Hierarchical Checkbox', 'your-prefix' ),
+				'name'     =>esc_html__( 'Hierarchical Checkbox', 'your-prefix' ),
 				'type'     => 'checkbox_list',
 				// New options syntax.  Supports hierarchical options with addition of parent
 				'options'  => array(
@@ -57,7 +57,7 @@ function your_prefix_choice_demo( $meta_boxes ) {
 
 			array(
 				'id'      => $prefix . 'select',
-				'name'    => __( 'Hierarchical select', 'your-prefix' ),
+				'name'    =>esc_html__( 'Hierarchical select', 'your-prefix' ),
 				'type'    => 'select',
 				'options' => array(
 					array(

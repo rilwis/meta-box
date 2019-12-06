@@ -11,7 +11,7 @@
 	$plugin = get_plugin_data( RWMB_DIR . 'meta-box.php', false, false );
 
 	// Translators: %s - Plugin name.
-	echo esc_html( sprintf( __( 'Welcome to %s', 'meta-box' ), $plugin['Name'] ) );
+	echo esc_html( sprintf(esc_html__( 'Welcome to %s', 'meta-box' ), $plugin['Name'] ) );
 	?>
 </h1>
 <div class="about-text"><?php esc_html_e( 'Meta Box is a free Gutenberg and GDPR-compatible WordPress custom fields plugin and framework that makes quick work of customizing a website with—you guessed it—meta boxes and custom fields in WordPress. Follow the instruction below to get started!', 'meta-box' ); ?></div>

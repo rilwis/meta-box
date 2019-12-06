@@ -77,13 +77,13 @@ class RWMB_Post_Field extends RWMB_Object_Choice_Field {
 		 * - If multiple post types: show 'Select a post'.
 		 * - If single post type: show 'Select a %post_type_name%'.
 		 */
-		$placeholder = __( 'Select a post', 'meta-box' );
+		$placeholder =esc_html__( 'Select a post', 'meta-box' );
 		if ( 1 === count( $field['post_type'] ) ) {
 			$post_type        = reset( $field['post_type'] );
 			$post_type_object = get_post_type_object( $post_type );
 			if ( ! empty( $post_type_object ) ) {
 				// Translators: %s is the taxonomy singular label.
-				$placeholder = sprintf( __( 'Select a %s', 'meta-box' ), strtolower( $post_type_object->labels->singular_name ) );
+				$placeholder = sprintf(esc_html__( 'Select a %s', 'meta-box' ), strtolower( $post_type_object->labels->singular_name ) );
 			}
 		}
 		$field = wp_parse_args(

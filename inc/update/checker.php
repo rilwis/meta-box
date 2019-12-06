@@ -131,7 +131,7 @@ class RWMB_Update_Checker {
 		$plugins = array_filter( $response['data'], array( $this, 'has_update' ) );
 		foreach ( $plugins as $plugin ) {
 			if ( empty( $plugin->package ) ) {
-				$plugin->upgrade_notice = __( 'UPDATE UNAVAILABLE! Please enter a valid license key to enable automatic updates.', 'meta-box' );
+				$plugin->upgrade_notice =esc_html__( 'UPDATE UNAVAILABLE! Please enter a valid license key to enable automatic updates.', 'meta-box' );
 			}
 
 			$data->response[ $plugin->plugin ] = $plugin;

@@ -31,7 +31,7 @@ class RWMB_Button_Field extends RWMB_Field {
 		$field = wp_parse_args(
 			$field,
 			array(
-				'std' => __( 'Click me', 'meta-box' ),
+				'std' =>esc_html__( 'Click me', 'meta-box' ),
 			)
 		);
 		$field = parent::normalize( $field );

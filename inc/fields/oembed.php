@@ -21,7 +21,7 @@ class RWMB_OEmbed_Field extends RWMB_Text_Field {
 		$field               = wp_parse_args(
 			$field,
 			array(
-				'not_available_string' => __( 'Embed HTML not available.', 'meta-box' ),
+				'not_available_string' =>esc_html__( 'Embed HTML not available.', 'meta-box' ),
 			)
 		);
 		$field['attributes'] = wp_parse_args(

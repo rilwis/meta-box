@@ -63,8 +63,8 @@ class RWMB_About {
 			return;
 		}
 		add_menu_page(
-			__( 'Meta Box', 'meta-box' ),
-			__( 'Meta Box', 'meta-box' ),
+		esc_html__( 'Meta Box', 'meta-box' ),
+		esc_html__( 'Meta Box', 'meta-box' ),
 			'activate_plugins',
 			'meta-box',
 			'__return_null',
@@ -79,8 +79,8 @@ class RWMB_About {
 		$parent_menu = $this->has_menu() ? 'meta-box' : $this->get_parent_menu();
 		$about       = add_submenu_page(
 			$parent_menu,
-			__( 'Welcome to Meta Box', 'meta-box' ),
-			__( 'Dashboard', 'meta-box' ),
+		esc_html__( 'Welcome to Meta Box', 'meta-box' ),
+		esc_html__( 'Dashboard', 'meta-box' ),
 			'activate_plugins',
 			'meta-box',
 			array( $this, 'render' )
@@ -150,7 +150,7 @@ class RWMB_About {
 	 */
 	public function change_footer_text() {
 		// Translators: %1$s - link to review form.
-		echo wp_kses_post( sprintf( __( 'Please rate <strong>Meta Box</strong> <a href="%1$s" target="_blank">&#9733;&#9733;&#9733;&#9733;&#9733;</a> on <a href="%1$s" target="_blank">WordPress.org</a> to help us spread the word. Thank you from the Meta Box team!', 'meta-box' ), 'https://wordpress.org/support/view/plugin-reviews/meta-box?filter=5#new-post' ) );
+		echo wp_kses_post( sprintf(esc_html__( 'Please rate <strong>Meta Box</strong> <a href="%1$s" target="_blank">&#9733;&#9733;&#9733;&#9733;&#9733;</a> on <a href="%1$s" target="_blank">WordPress.org</a> to help us spread the word. Thank you from the Meta Box team!', 'meta-box' ), 'https://wordpress.org/support/view/plugin-reviews/meta-box?filter=5#new-post' ) );
 	}
 
 	/**

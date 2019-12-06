@@ -91,11 +91,11 @@ class RWMB_Taxonomy_Field extends RWMB_Object_Choice_Field {
 		 * - If multiple taxonomies: show 'Select a term'.
 		 * - If single taxonomy: show 'Select a %taxonomy_name%'.
 		 */
-		$placeholder   = __( 'Select a term', 'meta-box' );
+		$placeholder   =esc_html__( 'Select a term', 'meta-box' );
 		$taxonomy_name = self::get_taxonomy_singular_name( $field );
 		if ( $taxonomy_name ) {
 			// Translators: %s is the taxonomy singular label.
-			$placeholder = sprintf( __( 'Select a %s', 'meta-box' ), strtolower( $taxonomy_name ) );
+			$placeholder = sprintf(esc_html__( 'Select a %s', 'meta-box' ), strtolower( $taxonomy_name ) );
 		}
 		$field = wp_parse_args(
 			$field,

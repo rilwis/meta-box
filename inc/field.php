@@ -352,7 +352,7 @@ abstract class RWMB_Field {
 				'clone'             => false,
 				'max_clone'         => 0,
 				'sort_clone'        => false,
-				'add_button'        => __( '+ Add more', 'meta-box' ),
+				'add_button'        =>esc_html__( '+ Add more', 'meta-box' ),
 				'clone_default'     => false,
 				'clone_as_multiple' => false,
 

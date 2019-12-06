@@ -20,7 +20,7 @@ class RWMB_Autocomplete_Field extends RWMB_Multiple_Values_Field {
 			'rwmb-autocomplete',
 			'RWMB_Autocomplete',
 			array(
-				'delete' => __( 'Delete', 'meta-box' ),
+				'delete' =>esc_html__( 'Delete', 'meta-box' ),
 			)
 		);
 	}

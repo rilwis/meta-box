@@ -21,7 +21,7 @@ if ( defined( 'ABSPATH' ) && ! defined( 'RWMB_VER' ) ) {
 	 */
 	function rwmb_check_php_version() {
 		if ( version_compare( phpversion(), '5.3', '<' ) ) {
-			die( esc_html__( 'Meta Box requires PHP version 5.3+. Please contact your host to upgrade.', 'meta-box' ) );
+			wp_die( esc_html__( 'Meta Box requires PHP version 5.3+. Please contact your host to upgrade.', 'meta-box' ) );
 		}
 	}
 

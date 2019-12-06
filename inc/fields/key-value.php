@@ -132,8 +132,8 @@ class RWMB_Key_Value_Field extends RWMB_Text_Field {
 		$field['placeholder']        = wp_parse_args(
 			(array) $field['placeholder'],
 			array(
-				'key'   => __( 'Key', 'meta-box' ),
-				'value' => __( 'Value', 'meta-box' ),
+				'key'   =>esc_html__( 'Key', 'meta-box' ),
+				'value' =>esc_html__( 'Value', 'meta-box' ),
 			)
 		);
 		return $field;

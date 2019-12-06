@@ -89,7 +89,7 @@ class RWMB_Input_List_Field extends RWMB_Choice_Field {
 	 */
 	public static function get_select_all_html( $field ) {
 		if ( $field['multiple'] && $field['select_all_none'] ) {
-			return sprintf( '<p class="rwmb-toggle-all-wrapper"><button class="rwmb-input-list-select-all-none button" data-name="%s">%s</button></p>', $field['id'], __( 'Toggle All', 'meta-box' ) );
+			return sprintf( '<p class="rwmb-toggle-all-wrapper"><button class="rwmb-input-list-select-all-none button" data-name="%s">%s</button></p>', $field['id'],esc_html__( 'Toggle All', 'meta-box' ) );
 		}
 		return '';
 	}

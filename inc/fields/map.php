@@ -52,7 +52,7 @@ class RWMB_Map_Field extends RWMB_Field {
 			'rwmb-map',
 			'RWMB_Map',
 			array(
-				'no_results_string' => __( 'No results found', 'meta-box' ),
+				'no_results_string' =>esc_html__( 'No results found', 'meta-box' ),
 			)
 		);
 	}

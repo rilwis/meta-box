@@ -25,7 +25,7 @@ class RWMB_OSM_Field extends RWMB_Field {
 			'rwmb-osm',
 			'RWMB_Osm',
 			array(
-				'no_results_string' => __( 'No results found', 'meta-box' ),
+				'no_results_string' =>esc_html__( 'No results found', 'meta-box' ),
 			)
 		);
 	}

@@ -20,7 +20,7 @@ class RWMB_Sidebar_Field extends RWMB_Object_Choice_Field {
 		$field = wp_parse_args(
 			$field,
 			array(
-				'placeholder' => __( 'Select a sidebar', 'meta-box' ),
+				'placeholder' =>esc_html__( 'Select a sidebar', 'meta-box' ),
 			)
 		);
 

@@ -90,8 +90,8 @@ class RWMB_Switch_Field extends RWMB_Input_Field {
 	 * @return string
 	 */
 	public static function format_single_value( $field, $value, $args, $post_id ) {
-		$on  = $field['on_label'] ? $field['on_label'] : __( 'On', 'meta-box' );
-		$off = $field['off_label'] ? $field['on_label'] : __( 'Off', 'meta-box' );
+		$on  = $field['on_label'] ? $field['on_label'] :esc_html__( 'On', 'meta-box' );
+		$off = $field['off_label'] ? $field['on_label'] :esc_html__( 'Off', 'meta-box' );
 		return $value ? $on : $off;
 	}
 }

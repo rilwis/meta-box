@@ -15,8 +15,8 @@ class RWMB_OSM_Field extends RWMB_Field {
 	 */
 	public static function admin_enqueue_scripts() {
 		// Because map is a hosted service, it's ok to use hosted Leaflet scripts.
-		wp_enqueue_style( 'leaflet', 'https://unpkg.com/leaflet@1.5.1/dist/leaflet.css', array(), '1.5.1' );
-		wp_enqueue_script( 'leaflet', 'https://unpkg.com/leaflet@1.5.1/dist/leaflet.js', array(), '1.5.1', true );
+		wp_enqueue_style( 'leaflet', 'https://unpkg.com/leaflet@1.6.0/dist/leaflet.css', array(), '1.6.0' );
+		wp_enqueue_script( 'leaflet', 'https://unpkg.com/leaflet@1.6.0/dist/leaflet.js', array(), '1.6.0', true );
 
 		wp_enqueue_style( 'rwmb-osm', RWMB_CSS_URL . 'osm.css', array( 'leaflet' ), RWMB_VER );
 		wp_enqueue_script( 'rwmb-osm', RWMB_JS_URL . 'osm.js', array( 'jquery', 'jquery-ui-autocomplete', 'leaflet' ), RWMB_VER, true );

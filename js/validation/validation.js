@@ -118,6 +118,16 @@
 			return;
 		}
 
+		// Mark the type of submit button that was clicked
+		$('form input[type=submit]').click(function() {
+			$('input[type=submit]', $(this).parents('form')).removeAttr('clicked');
+			if( $(this).attr('id') == 'save-post'){
+				// Skip validation - only saving, not publishing
+				$(this).attr('formnovalidate', 'true');
+			}
+			$(this).attr('clicked', 'true');
+		});
+
 		// Edit post, edit term, edit user, front-end form.
 		var $forms = $( '#post, #edittag, #your-profile, .rwmb-form' );
 		$forms.each( function() {

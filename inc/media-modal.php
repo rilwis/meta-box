@@ -28,6 +28,10 @@ class RWMB_Media_Modal {
 		add_filter( 'attachment_fields_to_save', array( $this, 'save_fields' ), 11, 2 );
 
 		add_filter( 'rwmb_show', array( $this, 'is_in_normal_mode' ), 10, 2 );
+
+		add_action( 'admin_footer', array( $this, 'print_uploader_scripts' ), 1 );
+		add_action( 'wp_enqueue_media', array( $this, 'enqueue_media_js' ), 11, 0 );
+		add_action( 'wp_ajax_save_media_fields', array( $this, 'ajax_save_media_fields'), 0, 1 );
 	}
 
 	/**
@@ -59,12 +63,11 @@ class RWMB_Media_Modal {
 			// Just ignore the field 'std' because there's no way to check it.
 			$meta                = RWMB_Field::call( $field, 'meta', $post->ID, true );
 			$form_field['value'] = $meta;
-
 			$field['field_name'] = 'attachments[' . $post->ID . '][' . $field['field_name'] . ']';
 
 			ob_start();
 			$field['name'] = ''; // Don't show field label as it's already handled by WordPress.
-			RWMB_Field::call( 'show', $field, false );
+			RWMB_Field::call( 'show', $field, true, $post->ID );
 			$form_field['html'] = ob_get_clean();
 
 			$form_fields[ $field['id'] ] = $form_field;
@@ -118,5 +121,28 @@ class RWMB_Media_Modal {
 	 */
 	protected function is_in_modal( $meta_box ) {
 		return in_array( 'attachment', $meta_box['post_types'], true ) && ! empty( $meta_box['media_modal'] );
+	}
+
+	public function enqueue_media_js() {
+		wp_enqueue_script( 'rwmb-media', RWMB_JS_URL . 'media-modal.js', array( 'jquery' ), RWMB_VER, true );
+	}
+
+	public function print_uploader_scripts(){
+		wp_enqueue_media();
+		?>
+		<div id="mb-hidden-wp-editor" style="display: none;">
+			<?php wp_editor( '', 'mb_content' ); ?>
+		</div>
+		<?php
+	}
+
+	public function ajax_save_media_fields() {
+		$post_id = $_POST['id'];
+		$new = $_POST['value'];
+		$field = $_POST['field'];
+		// $old = RWMB_Field::call( $field, 'raw_meta', $post_id );
+		// RWMB_Field::call( $field, 'save', $new, $old, $post_id );
+		update_post_meta($post_id, $field, $new);
+		wp_send_json_success( 'Saved' );
 	}
 }
